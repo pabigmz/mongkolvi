@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Mitr", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-header {
+    display: flex;
+    flex-direction: column;
+
+    & .under_text {
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+
+.toggle-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    & i {
+        font-size: 24px;
+    }
+}
+
+
+.menu i {
+    font-size: 36px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+
+    & li {
+        margin-right: 20px;
+    }
+
+    & a {
+        color: black;
+    }
+
+    & li .btn {
+        padding: 0.5rem 1rem;
+        background-color: #BB0FCB;
+        border-radius: 20px;
+        transition: 0.4 all ease;
+    }
+
+    & li .btn a {
+        color: white;
+    }
+
+    & li .btn:hover {
+        scale: 1.02;
+    }
+
+    & li .register {
+        background-color: white;
+    }
+
+    & li .register a {
+        color: #BB0FCB;
+    }
+
+}
+
+.container_main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.box {
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    & img {
+        width: 60%;
+        border-radius: 1rem;
+    }
+}
+
+#detail .content {
+    background: rgb(62,0,75);
+    background: linear-gradient(180deg, rgba(62,0,75,1) 0%, rgba(126,57,162,1) 44%, rgba(167,116,169,1) 100%); 
+    width: 100%;
+    height: 300px;
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+}
+
+#detail .content .left-detail {
+    width: 100%;
+
+    & span {
+        font-size: 26px;
+        font-weight: 500;
+        color: white;
+    }
+    & p {
+        margin-top: 1rem;
+        color: white;
+    }
+}
+
+#detail .content .right-detail {
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+}
+
+#detail .content .right-detail .box {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    & i {
+        font-size: 40px;
+        color: white;
+    }
+    & p {
+        color: white;
+    }
+}
+
+#benefit .content {
+    width: 100%;
+    padding: 2rem 5rem;
+    height: auto;
+
+    & h2 {
+        font-weight: 500;
+    }
+
+    & ol {
+        margin-left: 1rem;
+    }
+
+    & ul {
+        margin-left: 1rem;
+    }
+}
+
+#why-use .content {
+    width: 100%;
+    padding: 2rem 5rem;
+    height: auto;
+
+    & h2 {
+        font-weight: 500;
+    }
+
+    & ol {
+        margin-left: 1rem;
+    }
+
+    & ul {
+        margin-left: 1rem;
+    }
+}
+
+.toggle-menu {
+    & i {
+        color: #BB0FCB;
+    }
+}
+
+#slider-image {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.slide-container {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* ป้องกันภาพเกิน */
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+    display: flex;
+    width: 300%; /* ขนาด 3 เท่าของ slide-container */
+    height: 100%;
+    animation: slide_animation 16s infinite;
+}
+
+.wrapper img {
+    flex: 0 0 100%; /* ทำให้ภาพแต่ละภาพมีขนาด 100% ของ slide-container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ป้องกันการบิดเบือน */
+}
+
+/* สร้าง Animation ให้เลื่อนภาพทีละรูป */
+@keyframes slide_animation {
+    0%, 20%    { transform: translateX(0); }        /* ภาพที่ 1 */
+    25%, 45%   { transform: translateX(-100%); }    /* ภาพที่ 2 */
+    50%, 70%   { transform: translateX(-200%); }    /* ภาพที่ 3 */
+    75%, 95%   { transform: translateX(-300%); }    /* ภาพที่ 4 */
+    100%       { transform: translateX(0); }        /* วนกลับภาพที่ 1 */
+}
+
+
+
+/* Mobile เล็กมาก */
+@media (max-width: 480px) {
+    #slider-image {
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+    .menu.active {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding: 1rem 2rem;
+        background-color: white;
+        & ul {
+            display: flex;
+            flex-direction: column;
+        }
+        & li {
+            margin-bottom: 10px;
+        }
+    }
+    #detail .content {
+        background: rgb(62,0,75);
+        background: linear-gradient(180deg, rgba(62,0,75,1) 0%, rgba(126,57,162,1) 44%, rgba(167,116,169,1) 100%); 
+        width: 100%;
+        height: 400px;
+        padding: 5px 1rem;
+        display: grid;
+        grid-template-columns: 100%;
+        align-content: center;
+        gap: 10px;
+    }
+
+    #detail .content .left-detail {
+        & span {
+            font-size: 18px;
+        }
+    }
+
+    #benefit .content {
+        width: 100%;
+        padding: 1rem;
+        height: auto;
+    
+        & h2 {
+            font-weight: 500;
+            font-size: 18px;
+        }
+    
+        & ol {
+            margin-left: 1rem;
+        }
+    
+        & ul {
+            margin-left: 1rem;
+        }
+    }
+
+    #why-use .content {
+        width: 100%;
+        padding: 1rem;
+        height: auto;
+    
+        & h2 {
+            font-weight: 500;
+            font-size: 18px;
+        }
+    
+        & ol {
+            margin-left: 1rem;
+        }
+    
+        & ul {
+            margin-left: 1rem;
+        }
+    }
+  }
+  
+  
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 991px) {
+    #slider-image {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .toggle-menu {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+    .menu.active {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding: 1rem 2rem;
+        background-color: white;
+        & ul {
+            display: flex;
+            flex-direction: column;
+        }
+        & li {
+            margin-bottom: 10px;
+        }
+    }
+  }
+  

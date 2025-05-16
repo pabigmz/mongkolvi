@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --color-background-second: #E2CAD8;
+  --color-background: #c18db4;
+  --color-background-side: #0e1b48;
+  --color-white: #ffff;
+  --color-black: #0000;
+  --color-btn: #8a2be2;
+  --color-btn-hover: rgb(98, 43, 226);
+
+  --box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Prompt", "Serif";
+  width: 100vw;
+  background-color: #D8E1ED;
+  user-select: none;
+  scrollbar-width: none;
+  display: flex;
+}
+
+.icon-menu {
+  display: none;
+}
+
+
+aside {
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  width: 240px;
+  background-color: white;
+}
+
+aside .sitebar {
+  margin: 1rem;
+  margin-top: 2rem;
+  height: calc(100vh - 150px);
+}
+
+aside .sitebar h1 {
+  font-weight: 400;
+  color: #3675FC;
+}
+
+aside .sitebar .list-menu {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  list-style: none;
+  gap: 15px;
+}
+
+aside .sitebar .list-menu li {
+  width: 100%;
+  height: 40px;
+}
+
+aside .sitebar .list-menu a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 1rem;
+  gap: 5px;
+}
+
+aside .sitebar .list-menu li:first-child {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: #B4ABAB;
+}
+
+aside .sitebar .list-menu li:last-child {
+  margin-top: auto;
+
+  & a {
+    color: #FA0000;
+  }
+}
+
+.container-evaluate {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-evaluate h2 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #3675FC;
+    margin-top: 1rem;
+}
+
+.container-evaluate canvas {
+    width: 300px !important;
+    height: 300px !important;
+    margin: 1rem;
+}
+
+#chartContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .summary-box h3, strong {
+        font-weight: 500;
+    }
+}
+
+/* Mobile เล็กมาก */
+@media (max-width: 480px) {
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    aside {
+      width: 100%;
+      height: auto;
+      position: relative;;
+    }
+  
+    aside .sitebar {
+      height: auto;
+      margin: 1rem;
+    }
+  
+    aside .sitebar .icon {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .icon-menu {
+      display: block;
+    }
+  
+    .icon-menu {
+      position: relative;
+  
+      & i {
+        font-size: large;
+      }
+    }
+  
+    aside .menu {
+      position: absolute;
+      width: 100%;
+      display: none;
+      background-color: white;
+      left: 0;
+      padding: 2rem 1rem;
+    }
+    
+    aside .sitebar .list-menu {
+      margin-top: 0;
+    }
+    
+    aside .menu.active {
+      position: absolute;
+      display: block;
+      z-index: 100;
+    }
+}  

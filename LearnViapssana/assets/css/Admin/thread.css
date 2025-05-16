@@ -1,0 +1,142 @@
+.accordion {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.accordion .accordion-item {
+    margin: 0 2rem 1rem 2rem;
+}
+
+.accordion-item .list-name {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+    background-color: #B4CAFB;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item .list-name::after {
+    content: '\002B';
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item .list-name.active::after {
+    content: "\2212";
+    transform: rotate(180deg);
+}
+
+.accordion-item .item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-item .item-body .item-body-content {
+    padding: 1rem 2rem;
+    border: 1px solid #B4CAFB;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+    & h2 {
+        font-weight: 400;
+    }
+}
+
+.container-main {
+    margin: 2rem;
+    width: 80%;
+
+    & h1 {
+        font-weight: 500;
+        color: #3675FC;
+    }
+
+    & hr {
+        margin: 10px 0;
+        opacity: 0.7;
+    }
+}
+
+.container-body {
+    width: 100%;
+}
+
+.item-body-content ul {
+    padding-left: 1rem;
+
+    & li {
+        margin-bottom: 5px;
+    }
+}
+
+.item-body-content form textarea {
+    width: 300px;
+    min-height: 200px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-family: "Prompt", "serif";
+}
+
+.item-body-content form button {
+    width: 300px;
+    height: 30px;
+    background-color: #3675FC;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: "Prompt", "serif";
+    color: white;
+    cursor: pointer;
+}
+
+.item-body-content form .del {
+    background-color: transparent;
+    border: 2px solid red;
+    width: 100px;
+    color: red;
+    float: right;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+.container-thread form {
+    width: 500px;
+
+}
+
+@media (max-width: 480px) {
+    .container-main {
+        width: 100% !important;
+        height: auto;
+        margin: 0;
+        padding: 0;
+
+        & h1 {
+            margin: 1rem;
+        }
+    }
+    .container-thread form {
+        width: 100%;
+    }
+
+    .item-body-content form textarea {
+        width: 100%;
+    }
+
+    .item-body-content form button {
+        width: 100%;
+    }
+}
